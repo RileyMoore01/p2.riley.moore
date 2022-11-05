@@ -179,7 +179,7 @@ void setup()
   buttons[14] = new Button(canvasWidth-sideOffset-btnWidth, canvasHeight - (topOffset+btnHeight), btnWidth, btnHeight, images[14]);
 
   //fingerprint button
-  buttons[15] = new Button(sideOffset + btnWidth*8, canvasHeight - (topOffset+btnHeight), btnWidth, btnHeight, images[15]);
+  buttons[15] = new Button(900, 800, btnWidth, btnHeight, images[15]);
   //"fake" fingerprint
   buttons[16] = new Button(sideOffset + btnWidth*9, canvasHeight - (topOffset+btnHeight), btnWidth, btnHeight, "");
 
