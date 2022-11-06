@@ -126,12 +126,7 @@ class Clock {
 
     // sets the color used for the clock hands
     stroke(128);
-
-    //x1= start of line; x2 = end of line
-    //line(x1, y1, x2, y2);
-    // the #'s below in the line() are used as offsets to create the length of the hands
-    // if they are too long then just adjust the #'s accordingly
-
+    
     // second hand
     strokeWeight(2);
     line(x, y, cos(s) * 60 + x, sin(s) * 60 + y);
@@ -154,8 +149,9 @@ class Clock {
 
     fill(128);
     textSize(38);
-    text(textDate, canvasWidth-sideOffset-(btnWidth*3), topOffset+(btnHeight/4), 2*btnWidth, btnHeight);
+    //text(textDate, canvasWidth-sideOffset-(btnWidth*3), topOffset+(btnHeight/4), 2*btnWidth, btnHeight);
+    text(textDate, 825, 10, 2*btnWidth, btnHeight);
     textSize(50);
-    text(textTime, canvasWidth-sideOffset-(btnWidth*2.6), topOffset+(btnHeight*.6), 2*btnWidth, btnHeight);
+    text(textTime, 1450, 45, 2*btnWidth, btnHeight);
   }
 }

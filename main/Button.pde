@@ -76,24 +76,24 @@ class Button {
     
   
 
-    ////if not toggled, display the image as black, else gray
-    //if (!toggled) {
-    //  for (int i=0; i< img.width; i++) {
-    //    for (int j=0; j< img.height; j++) {
-    //      if (img.get(i, j) == onColor) {
-    //        img.set(i, j, offColor);      //change the colors of the non transparent pixels
-    //      }//end if
-    //    }//end for height
-    //  }//end for width
-    //} else {
-    //  for (int i=0; i< img.width; i++) {
-    //    for (int j=0; j< img.height; j++) {
-    //      if (img.get(i, j) == offColor) {
-    //        img.set(i, j, onColor);        //change the colors of the non transparent pixels
-    //      }//end if
-    //    }//end for height
-    //  }//end for width
-    //}//end else
+    //if not toggled, display the image as black, else gray
+    if (!toggled) {
+      for (int i=0; i< img.width; i++) {
+        for (int j=0; j< img.height; j++) {
+          if (img.get(i, j) == onColor) {
+            img.set(i, j, offColor);      //change the colors of the non transparent pixels
+          }//end if
+        }//end for height
+      }//end for width
+    } else {
+      for (int i=0; i< img.width; i++) {
+        for (int j=0; j< img.height; j++) {
+          if (img.get(i, j) == offColor) {
+            img.set(i, j, onColor);        //change the colors of the non transparent pixels
+          }//end if
+        }//end for height
+      }//end for width
+    }//end else
   }
 
   void setColor(int r, int g, int b) {

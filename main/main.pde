@@ -3,17 +3,17 @@
 //Audio beepSound = new Audio(); // to use sound online
 //SoundFile beepSound; //to use sound in Processing application
 
-static int canvasWidth = 1900; //2732
-static int canvasHeight = 1000; //1536
+static int canvasWidth = 1900;
+static int canvasHeight = 1000;
 
-static int btnWidth = 160;
-static int btnHeight = 160;
+static int btnWidth = 140;
+static int btnHeight = 140;
 
-static int widgetWidth = 640;
-static int widgetHeight = 480;
+static int widgetWidth = 540;
+static int widgetHeight = 380;
 
-static int sideOffset = 6;
-static int topOffset = 48;
+static int sideOffset = 2;
+static int topOffset = 28;
 
 Button[] buttons = new Button[19];
 PImage[] images = new PImage[29];
@@ -21,14 +21,52 @@ PImage[] images = new PImage[29];
 Clock clock;
 
 boolean displayTempInF = true;
+
+/*
+ 0  - menu
+ -------------------
+ 1  - social
+ 2  - news
+ 3  - health
+ -------------------
+ 4  - reddit
+ 5  - facebook
+ 6  - twitter
+ 7  - tumblr
+ --------------------
+ 8  - fox
+ 9 - cnn
+ 10 - onion
+ 11 - bbc
+ --------------------
+ 12 - weather
+ 13 - clock
+ 14 - settings
+ 15 - fingerprint
+ --------------------
+ 16 - steps
+ 17 - weight
+ 18 - sleep
+ --------------------
+ 17 - calendar widget
+ 18 - weather widget
+ --------------------
+ */
+
+
 boolean menuOpen = false;
 int menuChoice = 0;
 int lastClicked = 0;
 
 PFont f2;
-String tempF = "77°F";
-String tempC = "25°C";
+String tempF = "62°F";
+String tempC = "16.6°C";
 
+/////////////////////////////////////////////////////
+
+
+
+/*********************************Mike's Variables***********************************************/
 PImage back;
 PImage settings;
 boolean settings_selected = false;
@@ -116,7 +154,7 @@ void setup()
   size(1900, 1000);
 
   images[0] = loadImage("icon_menu.png");
-  images[1] = loadImage("icon_social.png");
+  images[1] = loadImage("icon_account.png");
   images[2] = loadImage("icon_news.png");
   images[3] = loadImage("icon_health.png");
   images[4] = loadImage("icon_reddit.png");
@@ -149,7 +187,7 @@ void setup()
   frameRate(30);
 
   //menu button
-  buttons[0] = new Button(sideOffset, canvasHeight - (topOffset+btnHeight), btnWidth, btnHeight, images[0]);
+  buttons[0] = new Button(0, 850, btnWidth, btnHeight, images[0]);
 
   //social, news, health buttons
   buttons[1] = new Button(sideOffset, canvasHeight - (topOffset+2*btnHeight), btnWidth, btnHeight, images[1]);
@@ -157,7 +195,7 @@ void setup()
   buttons[3] = new Button(sideOffset, canvasHeight - (topOffset+4*btnHeight), btnWidth, btnHeight, images[3]);
 
   //social media buttons
-  buttons[4] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+2*btnHeight), btnWidth, btnHeight, images[4]);
+  buttons[4] = new Button(200, 850, btnWidth, btnHeight, images[4]);
   buttons[5] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+3*btnHeight), btnWidth, btnHeight, images[5]);
   buttons[6] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+4*btnHeight), btnWidth, btnHeight, images[6]);
   buttons[7] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+5*btnHeight), btnWidth, btnHeight, images[7]);
@@ -169,14 +207,14 @@ void setup()
   buttons[11] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+5*btnHeight), btnWidth, btnHeight, images[11]);
 
   //weather
-  buttons[12] = new Button(sideOffset, topOffset, btnWidth, btnHeight, images[12]);
+  buttons[12] = new Button(10, 5, btnWidth, btnHeight, images[12]);
 
   //clock button
-  buttons[13] = new Button(canvasWidth-sideOffset-(btnWidth), topOffset, btnWidth, btnHeight, "");
-  clock = new Clock(canvasWidth-sideOffset-(btnWidth), topOffset, btnWidth, btnHeight);
+  buttons[13] = new Button(1740, 30, btnWidth, btnHeight, "");
+  clock = new Clock(1740, 30, btnWidth, btnHeight);
 
   //setings button
-  buttons[14] = new Button(canvasWidth-sideOffset-btnWidth, canvasHeight - (topOffset+btnHeight), btnWidth, btnHeight, images[14]);
+  buttons[14] = new Button(1775, 850, btnWidth, btnHeight, images[14]);
 
   //fingerprint button
   buttons[15] = new Button(900, 800, btnWidth, btnHeight, images[15]);
@@ -190,8 +228,7 @@ void setup()
 
   f2 = createFont("DialogInput.plain", 48, true);
 
-  /**************************************Mikes's Setup**********************************************************/
-  //setup "settings" icon
+ 
   settings = loadImage("icon_settings.png", "png");
 
   //create colors
@@ -206,8 +243,8 @@ void setup()
   current_language = "English";
 
   //coordinates for setting menu
-  options_x = 2142;
-  options_y = 906;
+  options_x = 1750;
+  options_y = 850;
 
   //timer stuff
   saved_time = 0;
@@ -215,7 +252,7 @@ void setup()
   //setup the settings menu options
   for (int i=0; i<5; i++)
   {
-    settings_options[i] = new Option(option_names[i], options_x, options_y);
+    settings_options[i] = new Option(option_names[i], 1750, 800);
     options_y += 90;
 
     if (i == 0)
@@ -233,8 +270,7 @@ void setup()
   //default options
   news.add("FOX");
   socials.add("Reddit");
-  /***************************************End of Mike's Setup********************************************************/
-}//end of setup
+}
 
 
 void draw() 
@@ -243,7 +279,7 @@ void draw()
   tint(white); //makes sure the background image is never dimmed
   background(color(255, 228, 181)); //show image in background  
   //background(back);
-  /***************************Mike's Draw() code ****************************************/
+
 
   //we pressed on figerprintButton
   if (buttons[15].toggled && !signed_in) {
@@ -254,7 +290,7 @@ void draw()
   //only display settings if signed in
   if (signed_in) {
     settings.loadPixels();
-    image(settings, canvasWidth-sideOffset-btnWidth, canvasHeight - (topOffset+btnHeight), btnWidth, btnHeight);
+    image(settings, 1750, 850, btnWidth, btnHeight);
   }
 
   //if the gear icon was clicked
@@ -263,7 +299,7 @@ void draw()
     stroke(black); 
 
     tint(white); //tint the settings icon red to show it was pressed
-    image(settings, canvasWidth-sideOffset-btnWidth, canvasHeight - (topOffset+btnHeight), btnWidth, btnHeight);
+    image(settings, 1750, 850, btnWidth, btnHeight);
 
     noFill();
     stroke(128);
@@ -310,7 +346,7 @@ void draw()
   {
     if (signed_in) {
       tint(gray);
-      image(settings, canvasWidth-sideOffset-btnWidth, canvasHeight - (topOffset+btnHeight), btnWidth, btnHeight);
+      image(settings, 1750, 850, btnWidth, btnHeight);
     }
   }
 
@@ -341,7 +377,6 @@ void draw()
 
   if (timer.equals("00:00") || timer.equals("0:00"))
     signed_in = false;
-  /********************************end of Mike's Draw() code********************************************/
 
   //update the logic       
   logic();
@@ -458,9 +493,9 @@ void draw()
   fill(128); 
 
   if (displayTempInF)
-    text(tempF, sideOffset+(1.5*btnWidth), topOffset+(btnHeight*.35), 2*btnWidth, btnHeight);
+    text(tempF, 200, 5, 2*btnWidth, btnHeight);
   else
-    text(tempC, sideOffset+(1.5*btnWidth), topOffset+(btnHeight*.35), 2*btnWidth, btnHeight);
+    text(tempC, 200, 5, 2*btnWidth, btnHeight);
 
   //the date
   textFont(f, 28);
@@ -508,24 +543,24 @@ void draw()
       //the rectangle 
       stroke(128);
       noFill();
-      rect(sideOffset+(btnWidth/2), topOffset+(3*btnHeight)/2, widgetWidth, widgetHeight, 10);
+      rect(200, 200, widgetWidth, widgetHeight, 10);
 
       //steps icon & text
-      image(images[16], sideOffset+(btnWidth*.75), topOffset+(3*btnHeight)/2, btnWidth, btnHeight);
-      textSize(36);
-      text("Yesterday    4673", sideOffset+(btnWidth*.65), topOffset+(3*btnHeight)/2 + btnHeight*1.5, btnWidth+20, btnHeight*2);
-      text("Today     4268", sideOffset+(btnWidth*.80), topOffset+(4.6*btnHeight)/2 + btnHeight*1.5, btnWidth, btnHeight*2);
+      image(images[16], 200, 200, btnWidth, btnHeight);
+      textSize(24);
+      text("Yesterday:    4673", 220, 350, btnWidth+20, btnHeight*2);
+      text("Today:     4268", 220, 500, btnWidth, btnHeight*2);
 
 
       //weight icon & text
-      image(images[17], sideOffset+(btnWidth*2), topOffset+(3*btnHeight)/2, btnWidth, btnHeight);
-      text("Last week    160lb", sideOffset+(btnWidth*1.9), topOffset+(3*btnHeight)/2 + btnHeight*1.5, btnWidth+20, btnHeight*2);
-      text("This week    161lb", sideOffset+(btnWidth*1.9), topOffset+(4.6*btnHeight)/2 + btnHeight*1.5, btnWidth+20, btnHeight*2);
+      image(images[17], 400, 200, btnWidth, btnHeight);
+      text("Last week:    160lb", 400, 350, btnWidth+20, btnHeight*2);
+      text("This week:    161lb", 400, 500, btnWidth+20, btnHeight*2);
 
       //sleep icon * text
-      image(images[18], sideOffset+(btnWidth*.75)+(2.5*btnWidth), topOffset+(3*btnHeight)/2, btnWidth, btnHeight);
-      text("Yesterday   7 hours", sideOffset+(btnWidth*3.2), topOffset+(3*btnHeight)/2 + btnHeight*1.5, btnWidth+20, btnHeight*2);
-      text("  Today      8 hours", sideOffset+(btnWidth*3.2), topOffset+(4.6*btnHeight)/2 + btnHeight*1.5, btnWidth+20, btnHeight*2);
+      image(images[18], 600, 200, btnWidth, btnHeight);
+      text("Yesterday:   7 hours", 590, 350, btnWidth+20, btnHeight*2);
+      text("  Today:      8 hours", 590, 500, btnWidth+20, btnHeight*2);
     }
   }  
 
@@ -538,10 +573,10 @@ void draw()
 //number
 void displayLeftWidget(int imgNum) {
   tint(white);
-  image(images[imgNum], sideOffset+(btnWidth/2), topOffset+(3*btnHeight)/2, widgetWidth, widgetHeight);
+  image(images[imgNum], 150, 200, widgetWidth, widgetHeight);
   stroke(128);
   noFill();
-  rect(sideOffset+(btnWidth/2), topOffset+(3*btnHeight)/2, widgetWidth, widgetHeight, 10);
+  rect(150, 200, widgetWidth, widgetHeight, 10);
 }
 
 //function to recalucate the positions of buttons
