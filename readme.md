@@ -1,4 +1,4 @@
 __Sketch__
 <p>
-    <img src="main/SmartMirrorSketch.jpg" width="620" height="440" />
+    <img src="main/SmartMirrorSketch.jpg" width="820" height="540" />
 </p>
