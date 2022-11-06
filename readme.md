@@ -1,1 +1,1 @@
-![Sketch]("img/SmartMirrorSketch.jpg")
+![Sketch]("SmartMirrorSketch.jpg")
