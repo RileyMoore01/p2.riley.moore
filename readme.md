@@ -1,6 +1,4 @@
-![Sketch]("SmartMirrorSketch.jpg")
-
-
+__Sketch__
 <p>
-    <img src="main/SmartMirrorSketch.jpg" width="220" height="240" />
+    <img src="main/SmartMirrorSketch.jpg" width="320" height="340" />
 </p>
