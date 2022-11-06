@@ -1,1 +1,1 @@
-
+![MyImage]("SmartMirrorSketch.pdf")
