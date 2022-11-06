@@ -1,6 +1,6 @@
 <h1><strong>Part C:</strong></h1>
 <br />
-<strong>Sketch</strong> <br />
+<h3>Sketch</h3> <br />
 <p>
     <img src="main/SmartMirrorSketch.jpg" width="1020" height="640" />
 </p>
