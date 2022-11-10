@@ -48,6 +48,11 @@
 
 <h1><strong>Part B:</strong></h1>
 <br />
-
+    After implementating the sketch to real life, there were some changes made. To start the news, socials, and weather widgets are now display at the bottom 
+    right of the screen to free up some of the left and center out the middle so the user is still able to clearly see themselves. However the health widget is 
+    located in the same place once the user requests it to appear. Why I left this widget is when the user is looking at it, there is logic to not allow widgets
+    on the right side be open. This way the user is able to have a full body view on the left side of the mirror. My thought process is the user will most likely
+    want to evaluate their full body when considering their own health statistics for the current and past day. Something that still needs to be implemeneted is 
+    the weather api call. As of now, the weather widget just shows a hard coded image of Lubbocks weather.
 <h1><strong>Part A:</strong></h1>
 <br />
