@@ -1,20 +1,17 @@
 // after doing this class, i realized that it would be best to integrate this with the button class for it to be clickable... but idk...
 class Clock {
-  // time shit
   public float s;
   public float m;
   public float h;
   public int sec;
   public int min;
   public int hr;
-  // date shit
   public int iDay;
   public int iYear;
   public int iMonth;
   String sday;
   String smonth;
 
-  // save eclipse dimensions and coords
   public int x, y, wdth, hgth;
   color btnColor = black;
   color txtColor = gray_dark;
@@ -22,7 +19,6 @@ class Clock {
   String textTime = "";
   int txtSize = 15;
 
-  // basic calendar constructor
   Clock(int xdim, int ydim, int w, int h)
   {
     x = xdim + w/2;
@@ -30,83 +26,79 @@ class Clock {
     wdth = (int) (w *.9);
     hgth = (int) (h * .9); 
 
-    // left this here since we don't need to update these often
     iDay = day();
     iMonth = month();
     iYear = year();
 
     int temp = day() % 7 - 1;
     switch(temp) {
-    case 2:
-      sday = "Mon";
-      break;
-    case 3:
-      sday = "Tue";
-      break;
-    case 4:
-      sday = "Wed";
-      break;
-    case 5:
-      sday = "Thurs";
-      break;
-    case 6:
-      sday = "Fri";
-      break;
-    case 7:
-      sday = "Sat";
-      break;
-    case 1:
-      sday = "Sun";
-      break;
+      case 2:
+        sday = "Mon";
+        break;
+      case 3:
+        sday = "Tue";
+        break;
+      case 4:
+        sday = "Wed";
+        break;
+      case 5:
+        sday = "Thurs";
+        break;
+      case 6:
+        sday = "Fri";
+        break;
+      case 7:
+        sday = "Sat";
+        break;
+      case 1:
+        sday = "Sun";
+        break;
     }
 
     switch(iMonth) {
-    case 1:
-      smonth = "Jan";
-      break;
-    case 2:
-      smonth = "Feb";
-      break;
-    case 3:
-      smonth = "Mar";
-      break;
-    case 4:
-      smonth = "Apr";
-      break;
-    case 5:
-      smonth = "May";
-      break;
-    case 6:
-      smonth = "Jun";
-      break;
-    case 7:
-      smonth = "Jul";
-      break;
-    case 8:
-      smonth = "Aug";
-      break;
-    case 9:
-      smonth = "Sep";
-      break;
-    case 10:
-      smonth = "Oct";
-      break;
-    case 11:
-      smonth = "Nov";
-      break;
-    case 12:
-      smonth = "Dec";
-      break;
+      case 1:
+        smonth = "Jan";
+        break;
+      case 2:
+        smonth = "Feb";
+        break;
+      case 3:
+        smonth = "Mar";
+        break;
+      case 4:
+        smonth = "Apr";
+        break;
+      case 5:
+        smonth = "May";
+        break;
+      case 6:
+        smonth = "Jun";
+        break;
+      case 7:
+        smonth = "Jul";
+        break;
+      case 8:
+        smonth = "Aug";
+        break;
+      case 9:
+        smonth = "Sep";
+        break;
+      case 10:
+        smonth = "Oct";
+        break;
+      case 11:
+        smonth = "Nov";
+        break;
+      case 12:
+        smonth = "Dec";
+        break;
     }
 
     print ("X: " + x + " Y: " + y + "\n");
   }
 
-  // used to render the calendar object
   public void render()
   {
-    // don't need to mess with these
-    // these need to be here to update the clock every draw() frame
     s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
     m = map(minute(), 0, 60, 0, TWO_PI) - HALF_PI;
     h = map(hour() % 12, 0, 12, 0, TWO_PI) - HALF_PI;
@@ -115,10 +107,8 @@ class Clock {
     min = minute();
     hr = hour();
 
-    //color of outline of clock
     stroke(128);
 
-    //only outline of the circle
     noFill();
 
     //draw the clock shape/object

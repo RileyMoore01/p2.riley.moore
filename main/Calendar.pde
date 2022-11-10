@@ -6,13 +6,15 @@ class Calendar
   int xPos, yPos;
   int boxWidth = 91;
   int boxHeight = 80;
+  int numDay = day();
+  String day = str(numDay);
 
-  String[][] dates ={ {"26", "27", "28", "29", "30", "31", "1"}, 
-    {"2", "3", "4", "5", "6", "7", "8"}, 
-    {"9", "10", "11", "12", "13", "14", "15"}, 
-    {"16", "17", "18", "19", "20", "21", "22"}, 
-    {"23", "24", "25", "26", "27", "28", "29"}, 
-    {"30", "1", "2", "3", "4", "5", "6"}, };
+  String[][] dates ={ {"30", "31", "1", "2", "3", "4", "5"}, 
+    {"6", "7", "8", "9", "10", "11", "12"}, 
+    {"13", "14", "15", "16", "17", "18", "19"}, 
+    {"20", "21", "22", "23", "24", "25", "26"}, 
+    {"27", "28", "29", "30", "1", "2", "3"}, 
+    {"4", "5", "6", "7", "8", "9", "10"}, };
 
 
   Calendar(int x, int y, int wdth, int hght) {
@@ -29,7 +31,6 @@ class Calendar
 
     strokeWeight(2);
     noFill();
-
 
 
 
@@ -68,15 +69,20 @@ class Calendar
         //current date circled
         if (j==4 && i==2) {
           //fill(230);  
-          ellipse(xPos + (i*boxWidth) + (boxWidth/2), yPos + (j*boxHeight) + (boxHeight/2), boxWidth*.8, boxHeight*.8);
+          ellipse(1593, 405, boxWidth*.8, boxHeight*.8);
           noFill();
           //stroke(128);
+        }
+        
+        if(dates[j][i] == day){
+          ellipse(xPos + (boxWidth*.25) + (i*boxWidth), yPos + (boxHeight*.4) + (j*boxHeight),boxWidth*.8, boxHeight*.8);
+          noFill();
         }
         
         //text of the date
         text(dates[j][i], xPos + (boxWidth*.25) + (i*boxWidth), yPos + (boxHeight*.4) + (j*boxHeight), boxWidth, boxHeight);
         
-      }//end for j
-    }//end for i
+      }
+    }
   }
 }

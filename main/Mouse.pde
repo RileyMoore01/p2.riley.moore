@@ -44,12 +44,12 @@ void mouseClicked()
   }//end for
 
 
-  /**********************start of mike's mouseCLicked()**********************************/
+
   if (settings_options[0].isClicked(5))
   {
     timer = sign_off;
   }
-  /***************************if settings icon was clicked**********************************/
+
   if ( (mouseX > 2517) && (mouseX < 2717) && (mouseY > 1321) && (mouseY < 1521) )
   {
     if (!settings_selected)
@@ -64,7 +64,7 @@ void mouseClicked()
         opt.setOptionClicked(false, 0);
     }
   }
-  /***********************if settings menu option was clicked**********************************/
+
   else if ( (mouseX > 2172) && (mouseX < 2712) )
   {
     if ((mouseY > 856) && (mouseY < 946))
@@ -303,7 +303,8 @@ void mouseClicked()
       }
     }//end auto sign-off
   }
-  /***************************if numpad button was hit****************************************/
+
+
   else if ( (sq(mouseX-1100) + sq(mouseY-1000)) < sq(radius) ) // if "1" clicked
   { 
     //println("You hit 1.");
@@ -429,4 +430,4 @@ void mouseClicked()
       settings_options[2].setOptionClicked(false, 5);
     }
   }
-}//end mouseClicked
+}

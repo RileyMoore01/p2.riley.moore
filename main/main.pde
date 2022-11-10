@@ -1,4 +1,4 @@
-//import processing.sound.*; //for the sound
+//import processing.sound.*; //for the sound //<>//
 
 //Audio beepSound = new Audio(); // to use sound online
 //SoundFile beepSound; //to use sound in Processing application
@@ -6,67 +6,29 @@
 static int canvasWidth = 1900;
 static int canvasHeight = 1000;
 
-static int btnWidth = 140;
-static int btnHeight = 140;
+static int btnWidth = 120;
+static int btnHeight = 120;
 
 static int widgetWidth = 540;
 static int widgetHeight = 380;
 
-static int sideOffset = 2;
-static int topOffset = 28;
+static int sideOffset = 8;
+static int topOffset = 68;
+
+static int fingerPrintCounter = 0;
 
 Button[] buttons = new Button[19];
 PImage[] images = new PImage[29];
+PImage bg;
 
 Clock clock;
-
 boolean displayTempInF = true;
-
-/*
- 0  - menu
- -------------------
- 1  - social
- 2  - news
- 3  - health
- -------------------
- 4  - reddit
- 5  - facebook
- 6  - twitter
- 7  - tumblr
- --------------------
- 8  - fox
- 9 - cnn
- 10 - onion
- 11 - bbc
- --------------------
- 12 - weather
- 13 - clock
- 14 - settings
- 15 - fingerprint
- --------------------
- 16 - steps
- 17 - weight
- 18 - sleep
- --------------------
- 17 - calendar widget
- 18 - weather widget
- --------------------
- */
-
-
 boolean menuOpen = false;
 int menuChoice = 0;
 int lastClicked = 0;
-
 PFont f2;
 String tempF = "62°F";
 String tempC = "16.6°C";
-
-/////////////////////////////////////////////////////
-
-
-
-/*********************************Mike's Variables***********************************************/
 PImage back;
 PImage settings;
 boolean settings_selected = false;
@@ -74,10 +36,8 @@ boolean set_date = false;
 boolean set_time = false;
 boolean timer_on = false;
 boolean signed_in = false;
-
 color gray_dark, black, gray, white;
 PFont f;
-static int fingerPrintCounter = 0;
 
 //array of setting menu options
 Option[] settings_options = new Option[5];
@@ -125,33 +85,28 @@ String[][][] option_names = {
 };
 
 
-//for coordinates of settings menu options
 int options_x, options_y;
-
-//to signify which names to show in settings menu
-int index = 0;
-
-// radius of numpad buttons
+int index = 0; //to signify which names to show in settings menu
 int radius = 85;
-
-//string values for date and time
+int current_time, saved_time, next;
 String date = "", time = "", sign_off = "";
 String timer = "";
 
 boolean healthWidgetDisplay = false;
 boolean weatherWidghetDisplay = false;
 
-//integers for the timer
-int current_time, saved_time, next;
-/**************************************************End of Mike's variables************************************/
 
+//------------------------------------------------------------
+//                         SETUP                            --
+//------------------------------------------------------------
 void setup() 
 {
-
   cal = new Calendar(canvasWidth-sideOffset-(int)(3.75*btnWidth), topOffset+ (int)(btnHeight*1.5), (int)(btnWidth*.5), (int)(btnHeight*.5));
-
-  // set the canvas size
+  bg = loadImage("glass2.jpg");
   size(1900, 1000);
+  image(bg, 0, 0);
+  bg.resize(1900,1000);
+  image(bg,0,0);
 
   images[0] = loadImage("icon_menu.png");
   images[1] = loadImage("icon_account.png");
@@ -186,40 +141,39 @@ void setup()
 
   frameRate(30);
 
-  //menu button
+  //Menu
   buttons[0] = new Button(0, 850, btnWidth, btnHeight, images[0]);
 
-  //social, news, health buttons
-  buttons[1] = new Button(sideOffset, canvasHeight - (topOffset+2*btnHeight), btnWidth, btnHeight, images[1]);
-  buttons[2] = new Button(sideOffset, canvasHeight - (topOffset+3*btnHeight), btnWidth, btnHeight, images[2]);
-  buttons[3] = new Button(sideOffset, canvasHeight - (topOffset+4*btnHeight), btnWidth, btnHeight, images[3]);
+  //Menu Selection
+  buttons[1] = new Button(170, 850, btnWidth, 115, images[1]);
+  buttons[2] = new Button(350, 830, 150, 150, images[2]);
+  buttons[3] = new Button(550, 850, btnWidth, 100, images[3]);
 
-  //social media buttons
-  buttons[4] = new Button(200, 850, btnWidth, btnHeight, images[4]);
-  buttons[5] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+3*btnHeight), btnWidth, btnHeight, images[5]);
-  buttons[6] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+4*btnHeight), btnWidth, btnHeight, images[6]);
-  buttons[7] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+5*btnHeight), btnWidth, btnHeight, images[7]);
+  //Social Media
+  buttons[4] = new Button(100, 850, btnWidth, btnHeight, images[4]);
+  buttons[5] = new Button(100, 750, btnWidth, btnHeight, images[5]);
+  buttons[6] = new Button(100, 750, btnWidth, btnHeight, images[6]);
+  buttons[7] = new Button(100, 750, btnWidth, btnHeight, images[7]);
 
-  //news buttons
+  //News
   buttons[8] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+2*btnHeight), btnWidth, btnHeight, images[8]);
   buttons[9] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+3*btnHeight), btnWidth, btnHeight, images[9]);
   buttons[10] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+4*btnHeight), btnWidth, btnHeight, images[10]);
   buttons[11] = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+5*btnHeight), btnWidth, btnHeight, images[11]);
 
-  //weather
+  // Weather
   buttons[12] = new Button(10, 5, btnWidth, btnHeight, images[12]);
 
-  //clock button
+  // Clock
   buttons[13] = new Button(1740, 30, btnWidth, btnHeight, "");
   clock = new Clock(1740, 30, btnWidth, btnHeight);
 
-  //setings button
+  // Settings
   buttons[14] = new Button(1775, 850, btnWidth, btnHeight, images[14]);
 
-  //fingerprint button
+  //  Fingerprint
   buttons[15] = new Button(900, 800, btnWidth, btnHeight, images[15]);
-  //"fake" fingerprint
-  buttons[16] = new Button(sideOffset + btnWidth*9, canvasHeight - (topOffset+btnHeight), btnWidth, btnHeight, "");
+  buttons[16] = new Button(900, 800, btnWidth, btnHeight, "");
 
   //create user buttons
   buttons[17] = new Button(sideOffset + btnWidth*7, canvasHeight - (topOffset+2*btnHeight), btnWidth, btnHeight, "Yes");
@@ -227,32 +181,28 @@ void setup()
 
 
   f2 = createFont("DialogInput.plain", 48, true);
-
  
   settings = loadImage("icon_settings.png", "png");
 
-  //create colors
+  // Colors
   gray_dark = color(128, 128, 128); 
   black = color(0, 0, 0); //black
   gray = color(192, 192, 192); //gray
   white = color(255, 255, 255); //white
 
   f = createFont("DialogInput.plain", 48, true);
-
-  //set default language for mirror
   current_language = "English";
 
   //coordinates for setting menu
   options_x = 1750;
   options_y = 850;
 
-  //timer stuff
   saved_time = 0;
 
   //setup the settings menu options
   for (int i=0; i<5; i++)
   {
-    settings_options[i] = new Option(option_names[i], 1750, 800);
+    settings_options[i] = new Option(option_names[i], 1550, 800);
     options_y += 90;
 
     if (i == 0)
@@ -272,22 +222,18 @@ void setup()
   socials.add("Reddit");
 }
 
-
+//------------------------------------------------------------
+//                         DRAW                             --
+//------------------------------------------------------------
 void draw() 
 {
+  tint(white);
+  background(bg);  
 
-  tint(white); //makes sure the background image is never dimmed
-  background(color(255, 228, 181)); //show image in background  
-  //background(back);
-
-
-  //we pressed on figerprintButton
   if (buttons[15].toggled && !signed_in) {
     signed_in = true;
   }
 
-
-  //only display settings if signed in
   if (signed_in) {
     settings.loadPixels();
     image(settings, 1750, 850, btnWidth, btnHeight);
@@ -303,7 +249,7 @@ void draw()
 
     noFill();
     stroke(128);
-    rect(2132, 856, 595, 450, 10);
+    rect(2132, 1550, 600, 450, 10);
     textFont(f);
     showSettingsMenu(index, 0);
 
@@ -342,18 +288,20 @@ void draw()
     }
     if (settings_options[4].isClicked(0))
       showSettingsMenu(index, 5);
-  } else //turn settings icon back to normal
-  {
-    if (signed_in) {
-      tint(gray);
-      image(settings, 1750, 850, btnWidth, btnHeight);
-    }
   }
+  //else //turn settings icon back to normal
+  //{
+  //  if (true) {
+  //    tint(gray);
+  //    image(settings, 1750, 850, btnWidth, btnHeight);
+  //  }
+  //}
 
 
   /***************************************************
-   * keeps track of time so timer can work correctly *
+   *                  Time Logic                      *
    ***************************************************/
+   
   if (settings_options[0].isClicked(5))
   {
     //println("Time.....");
@@ -411,7 +359,7 @@ void draw()
     buttons[16].toggled = false;
     textSize(48);
     textAlign(CENTER);
-    text("Hold finger to fingerprint icon for 3 seconds", sideOffset + btnWidth*7 + (btnWidth*.1), canvasHeight - (topOffset+3*btnHeight) + (btnHeight*.45), btnWidth*3, btnHeight);
+    text("Hold finger to fingerprint icon for 3 seconds", 1400, 500, btnWidth*3, btnHeight);
   }
   
   if(buttons[18].toggled){
@@ -479,10 +427,10 @@ void draw()
     if (buttons[1].toggled || buttons[2].toggled || buttons[3].toggled) {
     } else {
 
-      image(images[19], sideOffset+(btnWidth/2), topOffset+(3*btnHeight)/2, widgetWidth, widgetHeight);
+      image(images[19], 50, 180, widgetWidth, widgetHeight);
       stroke(128);
       noFill();
-      rect(sideOffset+(btnWidth/2), topOffset+(3*btnHeight)/2, widgetWidth, widgetHeight, 10);
+      rect(50, 180, widgetWidth, widgetHeight, 10);
     }
   }
 
@@ -499,11 +447,11 @@ void draw()
 
   //the date
   textFont(f, 28);
-  text(date, canvasWidth-sideOffset-(btnWidth*3), topOffset, 2*btnWidth, btnHeight);
+  text(date, 1500, 40, 2*btnWidth, btnHeight);
 
   //the time
   textFont(f, 32);
-  text(time, canvasWidth-sideOffset-(btnWidth*3), topOffset+(btnHeight*.5), 2*btnWidth, btnHeight);
+  text(time, 1500, 40, 2*btnWidth, btnHeight);
 
 
   //only display sub menu's if menu is open
@@ -543,40 +491,37 @@ void draw()
       //the rectangle 
       stroke(128);
       noFill();
-      rect(200, 200, widgetWidth, widgetHeight, 10);
+      rect(50, 200, widgetWidth, widgetHeight, 10);
 
       //steps icon & text
-      image(images[16], 200, 200, btnWidth, btnHeight);
-      textSize(24);
-      text("Yesterday:    4673", 220, 350, btnWidth+20, btnHeight*2);
-      text("Today:     4268", 220, 500, btnWidth, btnHeight*2);
+      image(images[16], 50, 200, btnWidth, btnHeight);
+      textSize(22);
+      text("Yesterday:    4673", 60, 350, btnWidth+20, btnHeight*2);
+      text("Today:     4268", 60, 500, btnWidth, btnHeight*2);
 
 
       //weight icon & text
-      image(images[17], 400, 200, btnWidth, btnHeight);
-      text("Last week:    160lb", 400, 350, btnWidth+20, btnHeight*2);
-      text("This week:    161lb", 400, 500, btnWidth+20, btnHeight*2);
+      image(images[17], 250, 200, btnWidth, btnHeight);
+      text("Last week:    160lb", 230, 350, btnWidth+20, btnHeight*2);
+      text("This week:    161lb", 230, 500, btnWidth+20, btnHeight*2);
 
       //sleep icon * text
-      image(images[18], 600, 200, btnWidth, btnHeight);
-      text("Yesterday:   7 hours", 590, 350, btnWidth+20, btnHeight*2);
-      text("  Today:      8 hours", 590, 500, btnWidth+20, btnHeight*2);
+      image(images[18], 450, 200, btnWidth, btnHeight);
+      text("Yesterday:   7 hours", 430, 350, btnWidth+20, btnHeight*2);
+      text("  Today:      8 hours", 430, 500, btnWidth+20, btnHeight*2);
     }
   }  
+}
 
-  //draw a grid over everything
-  //drawGrid();
-  
-}// end of draw
 
-//displays the widget associated with button 
-//number
+
+//displays the widget associated with button number
 void displayLeftWidget(int imgNum) {
   tint(white);
-  image(images[imgNum], 150, 200, widgetWidth, widgetHeight);
+  image(images[imgNum], 50, 200, widgetWidth, widgetHeight);
   stroke(128);
   noFill();
-  rect(150, 200, widgetWidth, widgetHeight, 10);
+  rect(50, 200, widgetWidth, widgetHeight, 11);
 }
 
 //function to recalucate the positions of buttons
@@ -591,7 +536,7 @@ void orderButtons(ArrayList<String> list) {
 
   for (int i=0; i < size; i++) {
 
-    Button btn = new Button(sideOffset + btnWidth + btnWidth/2, canvasHeight - (topOffset+(i+2)*btnHeight), btnWidth, btnHeight, images[0]);
+    Button btn = new Button(5, canvasHeight - (topOffset+(i+2)*btnHeight), btnWidth, btnHeight, images[0]);
 
     String name = list.get(i);
 
@@ -766,7 +711,7 @@ void showSettingsMenu(int index, int color_num)
 void resetSettingsMenu()
 {
   index = 0;
-  //settings_selected = false;
+  settings_selected = false;
 
   for (Option t : settings_options)
     if (t.getY() != 806)
@@ -938,14 +883,3 @@ void submenuFix(int start, int end, int choice) {
     }
   }//end for
 }//end submenuFix
-
-
-void drawGrid() {
-
-  stroke(150, 0, 0);
-
-  for (int i=0; i < 18; i++) {
-    line(0, topOffset + (i*btnHeight), canvasWidth, topOffset + (i*btnHeight));
-    line(sideOffset + (i*btnHeight), 0, sideOffset + (i*btnHeight), canvasHeight);
-  }
-}
