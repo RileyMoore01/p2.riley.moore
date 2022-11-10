@@ -53,6 +53,11 @@
     located in the same place once the user requests it to appear. Why I left this widget is when the user is looking at it, there is logic to not allow widgets
     on the right side be open. This way the user is able to have a full body view on the left side of the mirror. My thought process is the user will most likely
     want to evaluate their full body when considering their own health statistics for the current and past day. Something that still needs to be implemeneted is 
-    the weather api call. As of now, the weather widget just shows a hard coded image of Lubbocks weather.
+    the weather api call. As of now, the weather widget just shows a hard coded image of Lubbocks weather. 
+    
+    Another major change is there is no longer a settings button. I was going to implemenet a whole login system, however I replaced this with a fingerprint icon.
+    I figure if this mirror was actually brought to life, it was be much easier on the user to just use a finger print scanner rather than traversing throuhg a 
+    whole login system on a smart mirrior. The fingerprint scanner is not at all hard to implement in the project so that is why there is just a fingerprint icon
+    that shows and you must press to access the screen. I simply see this as a hardware issue rather than software so will approach it as such.
 <h1><strong>Part A:</strong></h1>
 <br />
