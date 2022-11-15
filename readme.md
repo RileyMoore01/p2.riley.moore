@@ -178,3 +178,8 @@
 <hr style="border-top: 3px dotted #998143">
 <br />
 
+<h1>Full Functionality</h1>
+<p>
+    <img src="main/fullFunction.gif" width="1020" height="540" />
+</p>
+
