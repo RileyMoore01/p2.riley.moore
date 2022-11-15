@@ -120,7 +120,8 @@
 
 <p>
     The menu function can be pressed to see an assortment of the personal platforms and information you are able to browse. As of now this
-    menu contains a social account icon, health icon, and a news icon.
+    menu contains a social account icon, health icon, and a news icon. However the only way you can access these icons is if the user signs
+    in via the fingerprint.
 </p>
 
 <hr style="border-top: 3px dotted #998143">
@@ -131,7 +132,10 @@
 </p>
 
 <p>
-    
+    Now to go into detail of what functions the menu can provide. First the social account icon only contains the reddit page for now, however
+    can hold up to three different social platforms. This logic goes for the remaining of the icons. Next, the news icon will display a fox news
+    widget in the bottom right of the screen to avoid cluter and open up the mirror for the user. Lastly, the health icon will show the users
+    hours of sleep for the past day, how many steps they took today and the last, and how much they weighed in the past two days.
 </p>
 
 <h2>Logic</h2>
