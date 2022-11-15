@@ -142,8 +142,10 @@
     hours of sleep for the past day, how many steps they took today and the last, and how much they weighed in the past two days.
 </p>
 
-<br /><br />
-<h2>Logic</h2>
+<hr style="border-top: 3px dotted #998143">
+<br />
+
+<h1>Logic</h1>
 <p>
     <img src="main/signInLogic.gif" width="1020" height="640" />
 </p>
@@ -162,3 +164,7 @@
 <p>
     
 </p>
+
+<hr style="border-top: 3px dotted #998143">
+<br />
+
