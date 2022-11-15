@@ -97,14 +97,18 @@
     in your location. This can be changed between both meterics to have ease of use for whatever metric system the user may use.
 </p>
 
+<hr style="border-top: 3px dotted #998143">
+
 <h3>Clock & Calander Function</h3>
 <p>
     <img src="main/clockFunctiongif.gif" width="1020" height="640" />
 </p>
 
 <p>
-    
+
 </p>
+
+<hr style="border-top: 3px dotted #998143">
 
 <h3>Menu Function</h3>
 <p>
@@ -114,6 +118,8 @@
 <p>
     
 </p>
+
+<hr style="border-top: 3px dotted #998143">
 
 <h3>Open Menu Function</h3>
 <p>
@@ -133,7 +139,8 @@
     
 </p>
 
-<h2>Logic</h2>
+<hr style="border-top: 3px dotted #998143">
+
 <p>
     <img src="main/renderLogic.gif" width="1020" height="640" />
 </p>
