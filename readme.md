@@ -85,7 +85,8 @@
     calander was developed to store personal daily tasks, this would not be the case.
 </p>
 
-<vr />
+<hr style="border-top: 3px dotted #998143">
+
 <h3>Weather App Function</h3>
 <p>
     <img src="main/weatherFunction.gif" width="1020" height="640" />
