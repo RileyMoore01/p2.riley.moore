@@ -91,7 +91,8 @@
 </p>
 
 <p>
-    
+    The weather icon displays a widget of the local weather and forecast. Along side the weather icon is displayed the current tempeture
+    in your location. This can be changed between both meterics to have ease of use for whatever metric system the user may use.
 </p>
 
 <h3>Clock & Calander Function</h3>
