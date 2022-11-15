@@ -73,7 +73,7 @@
 </p>
 
 <p>
-    <img src="main/SignIn.gif" width="1020" height="640" />
+    <img src="main/SignIngif.gif" width="1020" height="640" />
 </p>
 
 
