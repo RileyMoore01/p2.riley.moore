@@ -70,6 +70,7 @@
 
 <p>
    To start the Part A of the presentation I would like to waklk through the functionaility of my project by the use of gifs.
+    The description of each gif will be below the image explaining its functionailty in detail.
 </p>
 
 <h3>Sign In Function</h3>
@@ -78,7 +79,10 @@
 </p>
 
 <p>
-    
+    Above is the demonstration of the sign in function. You are not able to access important personal information about the user
+    until they have used their own fingerprint to sign in. As of now this is on a 10 minute timer to lock the screen if there is 
+    no activity during that time. The weather and calander are accessible due to the fact it sells no personal information. If the
+    calander was developed to store personal daily tasks, this would not be the case.
 </p>
 
 <h3>Weather App Function</h3>
