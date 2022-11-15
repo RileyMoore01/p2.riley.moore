@@ -105,7 +105,10 @@
 </p>
 
 <p>
-
+    If the user presses the clock icon it will open a calender formated in the current months dates. The current day will be circled. 
+    As for the the actual clock icon, it has an hour, minute, and second hand just like a normal clock that updates every second.
+    Another feature of this smart mirror is the current time will be displayed digitaly next to the clock. The last feature of this
+    is the current day, month, and year in a string format that is displayed at all times in the top middle of the mirror.
 </p>
 
 <hr style="border-top: 3px dotted #998143">
