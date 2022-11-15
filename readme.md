@@ -151,7 +151,9 @@
 </p>
 
 <p>
-    
+    As briefly explained in the sigin function description, a user can not access the menu items unless they have physically used
+    the fingerprint hardware to sign into the smart mirror. They are able to user the weather and look at the calender as that 
+    does not give away any personal information and should be easily accessed.
 </p>
 
 <hr style="border-top: 3px dotted #998143">
@@ -162,7 +164,8 @@
 </p>
 
 <p>
-    
+    To remove the possiblity of the user cluttering the smart screen and in turn not being able to navigate the screen I applied
+    some spacing logic. In the demostration above, you are not able to access the weather icon and the menu items at the same time.
 </p>
 
 <hr style="border-top: 3px dotted #998143">
