@@ -92,4 +92,9 @@
     <img src="main/menuFunction.gif" width="1020" height="640" />
 </p>
 
+<h3>Open Menu Function</h3>
+<p>
+    <img src="main/openMenu.gif" width="1020" height="640" />
+</p>
+
 
