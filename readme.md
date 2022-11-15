@@ -67,3 +67,9 @@
 
 <h1><strong>Part A:</strong></h1>
 <br />
+
+<p>
+   To start the Part A of the presentation I would like to waklk through the functionaility of my project by the use of gifs.
+</p>
+
+
