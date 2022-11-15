@@ -102,4 +102,9 @@
     <img src="main/signInLogic.gif" width="1020" height="640" />
 </p>
 
+<h2>Logic</h2>
+<p>
+    <img src="main/renderLogic.gif" width="1020" height="640" />
+</p>
+
 
