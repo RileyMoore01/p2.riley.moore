@@ -97,4 +97,8 @@
     <img src="main/openMenu.gif" width="1020" height="640" />
 </p>
 
+<h2>Logic</h2>
+![image](https://user-images.githubusercontent.com/50551379/202004167-1d79bbfa-4d8d-42c0-89c6-976d074a4cc6.png)
+
+
 
