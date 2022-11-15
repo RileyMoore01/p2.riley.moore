@@ -77,9 +77,17 @@
     <img src="main/SignIngif.gif" width="1020" height="640" />
 </p>
 
+<p>
+    
+</p>
+
 <h3>Weather App Function</h3>
 <p>
     <img src="main/weatherFunction.gif" width="1020" height="640" />
+</p>
+
+<p>
+    
 </p>
 
 <h3>Clock & Calander Function</h3>
@@ -87,9 +95,17 @@
     <img src="main/clockFunctiongif.gif" width="1020" height="640" />
 </p>
 
+<p>
+    
+</p>
+
 <h3>Menu Function</h3>
 <p>
     <img src="main/menuFunction.gif" width="1020" height="640" />
+</p>
+
+<p>
+    
 </p>
 
 <h3>Open Menu Function</h3>
@@ -97,9 +113,17 @@
     <img src="main/openMenu.gif" width="1020" height="640" />
 </p>
 
+<p>
+    
+</p>
+
 <h2>Logic</h2>
 <p>
     <img src="main/signInLogic.gif" width="1020" height="640" />
+</p>
+
+<p>
+    
 </p>
 
 <h2>Logic</h2>
@@ -107,4 +131,6 @@
     <img src="main/renderLogic.gif" width="1020" height="640" />
 </p>
 
-
+<p>
+    
+</p>
