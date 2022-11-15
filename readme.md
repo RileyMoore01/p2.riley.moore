@@ -119,7 +119,8 @@
 </p>
 
 <p>
-    
+    The menu function can be pressed to see an assortment of the personal platforms and information you are able to browse. As of now this
+    menu contains a social account icon, health icon, and a news icon.
 </p>
 
 <hr style="border-top: 3px dotted #998143">
