@@ -6,8 +6,8 @@ class Calendar
   int xPos, yPos;
   int boxWidth = 91;
   int boxHeight = 80;
-  int numDay = day();
-  String day = str(numDay);
+  //int numDay = day();
+  //String day = str(numDay);
 
   String[][] dates ={ {"30", "31", "1", "2", "3", "4", "5"}, 
     {"6", "7", "8", "9", "10", "11", "12"}, 
@@ -31,7 +31,6 @@ class Calendar
 
     strokeWeight(2);
     noFill();
-
 
 
     for (int i=0; i < 7; i++) {
@@ -74,10 +73,10 @@ class Calendar
           //stroke(128);
         }
         
-        if(dates[j][i] == day){
-          ellipse(xPos + (boxWidth*.25) + (i*boxWidth), yPos + (boxHeight*.4) + (j*boxHeight),boxWidth*.8, boxHeight*.8);
-          noFill();
-        }
+        //if(dates[j][i] == day){
+        //  ellipse(xPos + (boxWidth*.25) + (i*boxWidth), yPos + (boxHeight*.4) + (j*boxHeight),boxWidth*.8, boxHeight*.8);
+        //  noFill();
+        //}
         
         //text of the date
         text(dates[j][i], xPos + (boxWidth*.25) + (i*boxWidth), yPos + (boxHeight*.4) + (j*boxHeight), boxWidth, boxHeight);

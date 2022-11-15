@@ -1,4 +1,4 @@
-//import processing.sound.*; //for the sound //<>//
+//import processing.sound.*; //for the sound
 
 //Audio beepSound = new Audio(); // to use sound online
 //SoundFile beepSound; //to use sound in Processing application
@@ -99,11 +99,6 @@ boolean weatherWidghetDisplay = false;
 //------------------------------------------------------------
 //                         SETUP                            --
 //------------------------------------------------------------
-void settings() {
-    size(1900, 1000);
-}
-
-
 void setup() 
 {
   cal = new Calendar(canvasWidth-sideOffset-(int)(3.75*btnWidth), topOffset+ (int)(btnHeight*1.5), (int)(btnWidth*.5), (int)(btnHeight*.5));
@@ -187,7 +182,7 @@ void setup()
 
   f2 = createFont("DialogInput.plain", 48, true);
  
-  //settings = loadImage("icon_sleep.png", "png");
+  settings = loadImage("icon_settings.png", "png");
 
   // Colors
   gray_dark = color(128, 128, 128); 
@@ -240,12 +235,12 @@ void draw()
   }
 
   if (signed_in) {
-    //settings.loadPixels();
-    //image(settings, 1750, 850, btnWidth, btnHeight);
+    settings.loadPixels();
+    image(settings, 1750, 850, btnWidth, btnHeight);
   }
 
   //if the gear icon was clicked
-  if (settings_selected)
+  if (true)
   {
     stroke(black); 
 
@@ -258,7 +253,7 @@ void draw()
     textFont(f);
     showSettingsMenu(index, 0);
 
-    if (settings_options[0].isClicked(0))
+    if (setting)
       showSettingsMenu(index, 1);
 
     if (settings_options[1].isClicked(0))
@@ -523,10 +518,10 @@ void draw()
 //displays the widget associated with button number
 void displayLeftWidget(int imgNum) {
   tint(white);
-  image(images[imgNum], 1300, 550, widgetWidth, widgetHeight);
+  image(images[imgNum], 50, 200, widgetWidth, widgetHeight);
   stroke(128);
   noFill();
-  rect(1300, 550, widgetWidth, widgetHeight, 11);
+  rect(50, 200, widgetWidth, widgetHeight, 11);
 }
 
 //function to recalucate the positions of buttons
@@ -716,7 +711,7 @@ void showSettingsMenu(int index, int color_num)
 void resetSettingsMenu()
 {
   index = 0;
-  settings_selected = false;
+  //settings_selected = false;
 
   for (Option t : settings_options)
     if (t.getY() != 806)
