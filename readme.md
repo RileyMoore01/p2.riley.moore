@@ -84,7 +84,7 @@
 
 <h3>Clock & Calander Function</h3>
 <p>
-    <img src="main/clockFunction.gif" width="1020" height="640" />
+    <img src="main/clockFunctiongif.gif" width="1020" height="640" />
 </p>
 
 <h3>Menu Function</h3>
