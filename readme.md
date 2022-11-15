@@ -69,7 +69,7 @@
     As for the background, I choose as close as to a mirror effect as possible that way you can tell what the color contrast will be on the actual mirror.
     Another thing i did to make this as realistic as possible is to include the fingerprint scanner. There are $50 or less hardware scanners that are able
     to read in a users fingerprint for comparison. This would be as simple as plugging in the scanner, creating a boolean value, then reading in that boolean
-    for permissions access.
+    for permissions access. This is another reason for taking away the settings menu as there is no account information to configure. 
 </p>
 
 <h1><strong>Part A:</strong></h1>
