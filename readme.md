@@ -76,4 +76,16 @@
     <img src="main/SignIngif.gif" width="1020" height="640" />
 </p>
 
+<p>
+    <img src="main/weatherFunction.gif" width="1020" height="640" />
+</p>
+
+<p>
+    <img src="main/clockFunction.gif" width="1020" height="640" />
+</p>
+
+<p>
+    <img src="main/menuFunction.gif" width="1020" height="640" />
+</p>
+
 
