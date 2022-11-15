@@ -72,18 +72,22 @@
    To start the Part A of the presentation I would like to waklk through the functionaility of my project by the use of gifs.
 </p>
 
+<h3>Sign In Function</h3>
 <p>
     <img src="main/SignIngif.gif" width="1020" height="640" />
 </p>
 
+<h3>Weather App Function</h3>
 <p>
     <img src="main/weatherFunction.gif" width="1020" height="640" />
 </p>
 
+<h3>Clock & Calander Function</h3>
 <p>
     <img src="main/clockFunction.gif" width="1020" height="640" />
 </p>
 
+<h3>Menu Function</h3>
 <p>
     <img src="main/menuFunction.gif" width="1020" height="640" />
 </p>
