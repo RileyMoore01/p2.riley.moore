@@ -82,7 +82,7 @@
 
 <h3>Sign In Function</h3>
 <p>
-    <img src="main/SignIngif.gif" width="1020" height="540" />
+    <img src="main/gif/SignIngif.gif" width="1020" height="540" />
 </p>
 
 <p>
@@ -97,7 +97,7 @@
 
 <h3>Weather App Function</h3>
 <p>
-    <img src="main/weatherFunction.gif" width="1020" height="540" />
+    <img src="main/gif/weatherFunction.gif" width="1020" height="540" />
 </p>
 
 <p>
@@ -110,7 +110,7 @@
 
 <h3>Clock & Calander Function</h3>
 <p>
-    <img src="main/clockFunctiongif.gif" width="1020" height="540" />
+    <img src="main/gif/clockFunctiongif.gif" width="1020" height="540" />
 </p>
 
 <p>
@@ -125,7 +125,7 @@
 
 <h3>Menu Function</h3>
 <p>
-    <img src="main/menuFunction.gif" width="1020" height="540" />
+    <img src="main/gif/menuFunction.gif" width="1020" height="540" />
 </p>
 
 <p>
@@ -139,7 +139,7 @@
 
 <h3>Open Menu Function</h3>
 <p>
-    <img src="main/openMenu.gif" width="1020" height="540" />
+    <img src="main/gif/openMenu.gif" width="1020" height="540" />
 </p>
 
 <p>
@@ -154,7 +154,7 @@
 
 <h1>Logic</h1>
 <p>
-    <img src="main/signInLogic.gif" width="1020" height="540" />
+    <img src="main/gif/signInLogic.gif" width="1020" height="540" />
 </p>
 
 <p>
@@ -167,7 +167,7 @@
 <br />
 
 <p>
-    <img src="main/renderLogic.gif" width="1020" height="540" />
+    <img src="main/gif/renderLogic.gif" width="1020" height="540" />
 </p>
 
 <p>
@@ -180,6 +180,6 @@
 
 <h1>Full Functionality</h1>
 <p>
-    <img src="main/fullFunction.gif" width="1020" height="540" />
+    <img src="main/gif/fullFunction.gif" width="1020" height="540" />
 </p>
 
