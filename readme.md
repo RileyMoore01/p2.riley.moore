@@ -3,7 +3,7 @@
 
 <h3>Sketch</h3> <br />
 <p>
-    <img src="main/gifs/SmartMirrorSketch.jpg" width="1020" height="640" />
+    <img src="main/SmartMirrorSketch.jpg" width="1020" height="640" />
 </p>
 <p>
     My sketch above includes various interactive features that I will explain in more depth below. I choose this design due to the clarity of the user's relfection
