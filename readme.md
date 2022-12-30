@@ -182,4 +182,3 @@
 <p>
     <img src="main/gifs/fullFunction.gif" width="1020" height="540" />
 </p>
-
